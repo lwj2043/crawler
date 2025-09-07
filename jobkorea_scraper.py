@@ -4,9 +4,7 @@ import os
 import datetime
 
 def capture_developer_jobs_screenshot():
-    """
-    잡코리아에서 '개발자' 채용 공고를 각각 스크린샷으로 찍는 함수
-    """
+
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         page = browser.new_page()
@@ -21,7 +19,7 @@ def capture_developer_jobs_screenshot():
         
         post_count = 0
         page_num = 1
-        max_posts = 500
+        max_posts = 200
 
         while post_count < max_posts:
             url = f"https://www.jobkorea.co.kr/Search/?stext={keyword}&Page_No={page_num}"
